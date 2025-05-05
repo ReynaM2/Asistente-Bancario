@@ -11,3 +11,4 @@ build/
 *.swp
 db.py
 requiremen.txt
+historial.db

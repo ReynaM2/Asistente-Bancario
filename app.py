@@ -63,33 +63,10 @@ Documento de referencia:
 Historial reciente de conversación:
 {contexto}
 
-Nueva pregunta del usuario:
+
 {prompt}
-
-Tu respuesta:
+ 
 """
-
-    # Generar la respuesta
-    model = genai.GenerativeModel("gemini-1.5-flash")
-    resp = model.generate_content(prompt_con_contexto)
-    response_text = resp.text.strip()
-
-    # Guardar en la base de datos
-    guardar_historial(prompt, response_text)
-    
-    return render_template('index.html', prompt=prompt, response_html=response_text)
-
-@app.route('/history', methods=['GET'])
-def history():
-    import sqlite3
-    conn = sqlite3.connect(os.path.join(os.path.dirname(__file__), 'historial.db'))
-    cursor = conn.cursor()
-    cursor.execute("SELECT prompt, respuesta, fecha FROM historial ORDER BY fecha DESC")
-    entries = cursor.fetchall()
-    conn.close()
-    return render_template('history.html', history=entries)
 
 if __name__ == '__main__':
    app.run(debug=True)
-
-
