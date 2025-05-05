@@ -24,11 +24,9 @@ Imprime en consola el texto generado por el modelo en respuesta a la consulta pr
 # # Generar contenido utilizando el modelo. El prompt de entrada es una consulta simple.
 # response = model.generate_content("Hola, ¿cuánto es 1+1?")
 
-# # Imprimir el texto generado por el modelo.
-# print(response.text)
 
 import os
 from app import app
 
-from flask import Flask
-app = Flask(__name__)
+if __name__ == '__main__':
+   app.run(debug=True)
