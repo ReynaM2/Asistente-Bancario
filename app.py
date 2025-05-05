@@ -257,8 +257,7 @@ def history():
     conn.close()
     return render_template('history.html', history=entries)
 
-# if __name__ == '__main__':
-#     app.run(debug=True)
+ if __name__ == '__main__':
+   app.run(debug=True)
 
-from flask import Flask
-app = Flask(__name__)
+
