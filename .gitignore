@@ -9,6 +9,5 @@ build/
 *.exe
 *.sqlite3
 *.swp
-db.py
+
 requiremen.txt
-historial.db
